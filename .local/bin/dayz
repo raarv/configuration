@@ -1,0 +1,19 @@
+#!/bin/sh
+
+setxkbmap -option
+
+sudo sysctl -w vm.max_map_count=1048576
+
+if [[ "${1}" == "nam1" ]]; then
+	bash /home/ra/Documents/DayZ/dayz-linux-cli-launcher/dayz-launcher.sh -l -n Foo -s 135.148.136.111:2302 -p 2305
+elif [[ "${1}" == "nam2" ]]; then
+	bash /home/ra/Documents/DayZ/dayz-linux-cli-launcher/dayz-launcher.sh -l -n Foo -s 135.148.136.111:2402 -p 2405
+elif [[ "${1}" == "nam3" ]]; then
+	bash /home/ra/Documents/DayZ/dayz-linux-cli-launcher/dayz-launcher.sh -l -n Foo -s 135.148.36.26:2302 -p 2305
+elif [[ "${1}" == "cherno" ]]; then
+	bash Documents/DayZ/dayz-linux-cli-launcher/dayz-launcher.sh -l -n Foo -s 135.148.136.66:2402 -p 2405
+elif [[ "${1}" == "liv" ]]; then
+	bash Documents/DayZ/dayz-linux-cli-launcher/dayz-launcher.sh -l -n Foo -s 135.148.136.66:2302 -p 2305
+elif [[ "${1}" == "esse" ]]; then
+	bash Documents/DayZ/dayz-linux-cli-launcher/dayz-launcher.sh -l -n Foo -s 135.148.136.110:2302 -p 2305
+fi

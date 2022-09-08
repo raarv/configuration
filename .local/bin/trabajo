@@ -1,0 +1,19 @@
+#!/bin/sh
+source ~/.config/shell/aliasrc
+
+ssha
+ssha_t
+
+tmux new-session -d -s tukan_session
+tmux send -t tukan_session "cd /home/ra/Documents/Trabajo/TukanMX/tukan_data/data_development" Enter
+tmux send -t tukan_session "source ../.venv/bin/activate" Enter
+tmux split-window -t tukan_session -h -c "#{pane_current_path}"
+tmux send -t tukan_session "cd /home/ra/Documents/Trabajo/TukanMX/tukan_data/data_development" Enter
+tmux send -t tukan_session "source ../.venv/bin/activate" Enter
+tmux send -t tukan_session "ipython" Enter
+tmux split-window -t tukan_session -v -c "#{pane_current_path}"
+tmux send -t tukan_session "cd /home/ra/Documents/Trabajo/TukanMX/tukan_data/data_development" Enter
+tmux send -t tukan_session "source ../.venv/bin/activate" Enter
+tmux send -t tukan_session "ipython" Enter
+tmux selectp -t 1
+tmux attach -t tukan_session

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+
+pacmd load-module module-remap-source source_name=denoised master=mic_denoised_out.monitor channels=1
