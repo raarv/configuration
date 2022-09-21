@@ -16,5 +16,9 @@ config checkout
 # files its trying to overwrite
 mkdir -p .config-backup && \
 config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | \
-xargs -I{} mv {} .config-backup/{}
+xargs -I {} mv {} .config-backup/{}
+
+# so git doesnt show all the untracked files in $HOME
+config config --local status.showUntrackedFiles no
+
 
